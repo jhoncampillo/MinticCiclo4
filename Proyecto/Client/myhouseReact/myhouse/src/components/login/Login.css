@@ -1,0 +1,67 @@
+/* reseteo todos los  parametros de los navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  /* El área de padding es el espacio entre el contenido del elemento y su borde*/
+  /*box-sizing: 0; /* recalculo del  tamano de todas las cajas*/
+  /*font-family: sans-serif;*/
+  text-decoration: none;
+  /*link sin raya */
+  /*text-align: justify; /*alinear textos justificados*/
+}
+
+/* Reset para REMS - 62.5% =10px de 16px -- cambio todo de pixeles a rem* asi se ajusta a cualquier resolucion celular, pc,  tv, etc */
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  /*mantine tamanos asiganados al usan padding y wight "ancho" */
+}
+
+*,
+*:before,
+*after {
+  box-sizing: inherit;
+  /*mantine tamanos asiganados al usar padding y wight "ancho*/
+}
+
+/*ponemos fuentes a todo el body*/
+
+body {
+  /* background-image: url("../../src/components/assets/img/bg.jpg");*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Lato", sans-serif;
+  /*fuente descargada de fonts google*/
+  font-size: 1.6rem;
+  /*textos del cuerpo de la pagina*/
+}
+
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 60px 0;
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+    max-height: 450px;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  padding-top: ;
+}
+
+.btnsubmit {
+  color: #ffffff;
+  margin-top: 40px;
+  width: 60px;
+  margin-left: 125px;
+  font-size: 14px;
+}
+.registerUser {
+  text-decoration: none;
+}
