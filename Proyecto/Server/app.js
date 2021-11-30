@@ -68,10 +68,10 @@ app.use(express.static(path.join(__dirname, "public")));
 // app.get("/", function (req, res) {
 //   res.send("Hola Mundo");
 // });
-app.use("/api", require("./routes/usuarios"));
-app.use("/api", require("./routes/Propietarios"));
-app.use("/api", require("./routes/gfamiliar"));
-app.use("/api", require("./routes/vehiculos"));
+app.use("/api", require("./src/routes/usuarios"));
+app.use("/api", require("./src/routes/Propietarios"));
+app.use("/api", require("./src/routes/gfamiliar"));
+app.use("/api", require("./src/routes/vehiculos"));
 
 //FIN RUTAS
 //HISTORY VUE
@@ -84,7 +84,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //   console.log("servidor por el puerto 3000");
 // });
 
-//ASIGNAR PUERTO AUTOMATICO - por defecto el 300 si no el que este libre
+//ASIGNAR PUERTO AUTOMATICO - por defecto el 3001 si no el que este libre
 app.set("puerto", process.env.PORT || 3001);
 app.listen(app.get("puerto"), function () {
   console.log("ejemplo de escucha on puerto " + app.get("puerto"));
