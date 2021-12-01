@@ -1,3 +1,21 @@
+/**
+  * File: vehiculo.js
+  *
+  * @version: 0.1
+  *
+  * Fecha de Creación: 28/11/2021
+  *
+  * Fecha de Modificación: 
+  *
+  * @author: 
+  *
+  * Copyright: @autor
+  *
+  */
+
+/**
+ * There is model's struct
+ */
 //Esquema a Modelo
 import moongose from "mongoose";
 const Schema = moongose.Schema;

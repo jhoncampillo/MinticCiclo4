@@ -1,3 +1,22 @@
+/**
+  * File: grupoFamiliar.js
+  *
+  * @version: 0.1
+  *
+  * Fecha de Creación: 28/11/2021
+  *
+  * Fecha de Modificación: 
+  *
+  * @author: 
+  *
+  * Copyright: @autor
+  *
+  */
+
+/**
+ * There is model's struct
+ */
+
 //GENERO LA RUTAS CON EXPRESS
 import express, { Router } from "express";
 //AHORA IMPORTO EL MODELO

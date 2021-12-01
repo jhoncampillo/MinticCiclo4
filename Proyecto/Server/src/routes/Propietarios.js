@@ -1,20 +1,38 @@
+/**
+  * File: propietario.js
+  *
+  * @version: 0.1
+  *
+  * Fecha de Creación: 28/11/2021
+  *
+  * Fecha de Modificación: 
+  *
+  * @author: 
+  *
+  * Copyright: @autor
+  *
+  */
+
+/**
+ * There is model's struct
+ */
 //GENERO LA RUTAS CON EXPRESS
 import express, { Router } from "express";
+//AHORA IMPORTO EL MODELO
+import PropietarioModel from "../models/Propietario";
 const router = express.Router();
 
-//AHORA IMPORTO EL MODELO
-import Nota from "../models/nota";
-
 //AGREGAR UNA nota -POST
-router.post("/nota-nueva", async (req, res) => {
+router.post("/propietarios-nuevo", async (req, res) => {
   //defino el documento
   //res = respuestas de parte del cliente
   //req= informacin del cleinte
   const body = req.body;
   try {
-    const notaDB = await Nota.create(body);
-    res.status(200).json(notaDB);
+    const propBD = await PropietarioModel.create(body);
+    res.status(200).json(propBD);
   } catch (error) {
+    console.log(String(error));
     return res.status(500).json({
       mensaje: "Ocurrio un Error",
       error,
@@ -23,13 +41,13 @@ router.post("/nota-nueva", async (req, res) => {
 });
 
 //RUTA GET
-router.get("/nota/:id", async (req, res) => {
+router.get("/propietarios/:id", async (req, res) => {
   //con el id busco en la base de datos
   const _id = req.params.id;
   try {
-    const notaDB = await Nota.findOne({ _id });
+    const propBD = await PropietarioModel.findOne({ _id });
     //respuesta
-    res.json(notaDB);
+    res.status(200).json(propBD);
   } catch (error) {
     return res.status(500).json({
       mensaje: "Ocurrio un error",
@@ -40,10 +58,10 @@ router.get("/nota/:id", async (req, res) => {
 
 //GET PARA TODOS LOS DOCUMENTOS
 
-router.get("/nota", async (req, res) => {
+router.get("/propietarios", async (req, res) => {
   try {
-    const notaDB = await Nota.find();
-    res.json(notaDB);
+    const propBD = await PropietarioModel.find();
+    res.status(200).json(propBD);
   } catch (error) {
     return res.status(500).json({
       mensaje: "Ocurrio un error",
@@ -53,17 +71,17 @@ router.get("/nota", async (req, res) => {
 });
 
 // METODO DELETE
-router.delete("/nota/:id", async (req, res) => {
+router.delete("/propietarios/:id", async (req, res) => {
   const _id = req.params.id;
   try {
-    const notaDB = await Nota.findByIdAndDelete({ _id });
+    const propBD = await PropietarioModel.findByIdAndDelete({ _id });
     //valido si existe
-    if (!notaDB) {
+    if (!propBD) {
       return res.status(404).json({
         mensaje: "No se encontro el Id Indicado",
       });
     }
-    res.json(notaDB);
+    res.json(propBD);
   } catch (error) {
     return res.status(500).json({
       mensaje: "Ocurrio un error",
@@ -73,14 +91,17 @@ router.delete("/nota/:id", async (req, res) => {
 });
 
 //RUTA PUT O ACTUALIZACION
-router.put("/nota/:id", async (req, res) => {
+router.put("/propietarios/:id", async (req, res) => {
   const _id = req.params.id;
   const body = req.body;
   try {
     //envio la actualizcion con el id y el nuebo body del registro
-    const notaDB = await Nota.findByIdAndUpdate(_id, body, { new: true });
-    res.json(notaDB);
+    const propBD = await PropietarioModel.findByIdAndUpdate(_id, body, {
+      new: true,
+    });
+    res.json(propBD);
   } catch (error) {
+    console.log(String(error));
     return res.status(500).json({
       mensaje: "Ocurrio un error",
       error,
