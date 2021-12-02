@@ -5,6 +5,7 @@ const cors = require('cors')
 const dotenv = require('dotenv');
 const UserRouter = require("./routers/userRouter");
 const ProductRouter = require("./routers/productRouter");
+const ContactoRouter = require("./routers/contactoRouter");
 //puede ser asi
 //require('dotenv'). dotenv.config()
 //const ConnDb = require("./database/connDb");
@@ -42,6 +43,7 @@ class Server {
         //creo  la ruta del User
         const userR = new UserRouter();
         const productR = new ProductRouter();
+        const contacto = new ContactoRouter();
         //------------ANNADE RUTAS A EXPRESS
         //anadira ruta a express
         this.app.use(router);
@@ -49,6 +51,8 @@ class Server {
         this.app.use(userR.router)
             //annado ruta Product
         this.app.use(productR.router)
+            //annado ruta Contacto
+        this.app.use(contacto.router)
             //pone el servidor a escuchar
         this.app.listen(this.app.get('PORT'), () => {
             console.log('Servidor Conectado Cloud Corriendo por el PORT ===>', this.app.get('PORT'));
