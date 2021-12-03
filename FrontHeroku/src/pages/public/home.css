@@ -1,0 +1,657 @@
+.Nav {
+  height: 140px;
+  margin-bottom: 2px;
+}
+.imgLogo {
+  border-radius: 15px;
+}
+/*Pagina de Clientes
+/* reseteo todos los  parametros de los navegadores */
+
+* {
+  margin: 0;
+  padding: 0;
+  /* El área de padding es el espacio entre el contenido del elemento y su borde*/
+  /*box-sizing: 0; /* recalculo del  tamano de todas las cajas*/
+  /*font-family: sans-serif;*/
+  text-decoration: none;
+  /*link sin raya */
+  /*text-align: justify; /*alinear textos justificados*/
+}
+
+/* Reset para REMS - 62.5% =10px de 16px -- cambio todo de pixeles a rem* asi se ajusta a cualquier resolucion celular, pc,  tv, etc */
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  /*mantine tamanos asiganados al usan padding y wight "ancho" */
+}
+
+*,
+*:before,
+*after {
+  box-sizing: inherit;
+  /*mantine tamanos asiganados al usar padding y wight "ancho*/
+}
+
+/*ponemos fuentes a todo el body*/
+
+body {
+  font-family: "Lato", sans-serif;
+  /*fuente descargada de fonts google*/
+  font-size: 1.6rem;
+  /*textos del cuerpo de la pagina*/
+}
+
+/*Globales*/
+
+img {
+  max-width: 100%;
+  /*acomoda las imagenes de ancho del navegador y sean reponsivas*/
+}
+
+.contenedor {
+  width: 95%;
+  /*espacion en las orillas*/
+  max-width: 120rem;
+  /*el tamano del contenedor no sobrepasa 1200px*/
+  /* margin-left: auto;
+    margin-right: auto;*/
+  margin: 0 auto;
+  /*este remplaza las dos lineas superiores y centra los elementos*/
+}
+
+/*defino tamamos a todos los h1-h2.,.h3,etc */
+
+h1 {
+  font-size: 3.8rem;
+}
+
+h2 {
+  font-size: 3.4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2.6rem;
+}
+
+/***************Utilidasdes para section en el html*********************************/
+
+.seccion {
+  margin-top: 2rem;
+  /* separa arriba y abajo la seecion */
+  margin-bottom: 2rem;
+}
+
+.fw-300 {
+  font-weight: 2rem;
+  /*ancho de la duente*/
+}
+
+.centrar-texto {
+  text-align: center;
+}
+
+.d-block {
+  display: block !important;
+  /*amplia el ancho de los botones "Ver Propiedad" y ignora "display: inline-block"*/
+}
+
+.contenido-centrado {
+  max-width: 800px;
+  /*centa texto de la pagina anuncio.html*/
+}
+
+/*****************BOTONES********************/
+
+.boton {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.8rem;
+  padding: 1rem 3rem;
+  /*alineacion hacia adentro*/
+  margin-top: 3rem;
+  /*separao el boton del texto*/
+  display: inline-block;
+  /*quita la alineacion por defecto*/
+  /*los enlaces  - imagenes tienen por defeto "display inline" no se afecta si no se desactiva*/
+  text-align: center;
+  border: none;
+  /*quita  los bordes a los submit */
+  display: block;
+  /*toman espacio disponible*/
+  flex: 0 0 100%;
+  /*hijos de elemntos flex*/
+}
+
+@media (min-width: 768px) {
+  .boton {
+    display: inline-block;
+    /*toma bien los margin y los padding*/
+    flex: 0 0 auto;
+    /*por ser hijos de flex*/
+  }
+}
+
+/* con el hover vuelve el  puntero una mano para senalar*/
+
+.boton:hover {
+  cursor: pointer;
+}
+
+.boton-amarillo {
+  background-color: #e08709;
+}
+
+.boton-verde {
+  background-color: #71b100;
+}
+
+/****************header site-header inicio*************************/
+
+/*este .site-header solo se aplica al nosotros.html */
+
+.site-header {
+  background-color: #333333;
+  padding: 1rem 0 3rem 0;
+}
+
+.site-header.inicio {
+  /*background-image: url(../img/header.jpg);*/
+  background-position: center center;
+  background-size: cover;
+  /* La imagen es renderizada, preservando su proporción propia*/
+  height: 100vh;
+  /*altura de la pantalla vh=viewport*/
+  min-height: 60rem;
+  /*tamano minimo de la imagen*/
+}
+
+/* clase que afecta el titulo del header"Ventade Casas y Dpto "*/
+
+.contenido-header {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /*acomoda de arriba hacia abajo*/
+  justify-content: space-between;
+  /*un texto arriba y otro abajo*/
+  text-align: center;
+  /*centro el contenido del header*/
+}
+
+@media (min-width: 768px) {
+  .contenido-header {
+    text-align: left;
+    /* manda el contenido a la izquierda*/
+  }
+}
+
+/*trabajo texto del flex */
+
+.contenido-header h1 {
+  color: #ffffff;
+  padding-bottom: 2rem;
+  /*espacio hacia adentro del elemneto*/
+  max-width: 60rem;
+  /* corta el texto para dos lineas*/
+  line-height: 4rem;
+  /*interlineado */
+}
+
+.barra {
+  padding-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .barra {
+    display: flex;
+    /*flexbox*/
+    justify-content: space-between;
+    /*justifica contenido de la  barra */
+    align-items: center;
+    /*alinea logos y enlances*/
+  }
+}
+
+/*Navegacion nav "a" hacemos referencia a los hijos que haye dentro de la etiqueta  */
+
+.navegacion a {
+  color: #ffffff;
+  /*color de textos de navegacion*/
+  text-decoration: none;
+  font-size: 2.8rem;
+  /* = 18px */
+  /*separacion de los textos  nav* 20px/
+    /*font font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;*/
+  display: block;
+  /* pone los enlaces uno debajo de otro*/
+}
+
+@media (min-width: 768px) {
+  .navegacion a {
+    display: inline-block;
+    /*regresa a la posicion inicial al ahumentar la resolucion*/
+    margin-right: 2rem;
+    /*alinea los enlaces*/
+    font-size: 1.8rem;
+  }
+  .navegacion a:last-of-type {
+    margin: 0;
+    /*Quita los  20px al ultimo nav "seudo selectores*/
+  }
+}
+
+.navegacion a:hover {
+  color: #71b100;
+  /*Cambia color al nav cuando paso el mouse sobre el*/
+}
+
+/*modulo de barras.svg en el menu */
+
+/**mobile-menu**************/
+
+.mobile-menu img {
+  width: 5rem;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+    /*cuando esta en pantalla grande desaparece el mobile-menu*/
+  }
+}
+
+/* no lo esta tomando */
+
+.navegacion:target {
+  display: block;
+}
+
+.navegacion {
+  display: none;
+  /*oculta la navegacion el pantalla pequena*/
+}
+
+@media (min-width: 768px) {
+  .navegacion {
+    display: block;
+    /*muestra la navegacion en pantalla grande*/
+  }
+}
+
+.navegacion a:last-of-type {
+  margin: 0;
+  /*Quita los  20px al ultimo nav "seudo selectores*/
+}
+
+/**Iconos Nosotros */
+
+.encabezado-nosotros {
+  font-weight: 300;
+  /*grosor de la fuente*- hay que tener la fuente cargada*/
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .iconos-nosotros {
+    display: flex;
+    justify-content: space-between;
+    /* justifica los iconos*/
+  }
+}
+
+/*iconos de Mas sobre Nosotros*/
+
+.icono {
+  /*flex-basis: 33.3%; /*divide espacio en los 3 iconos*/
+  /* calcula el espacion equitativamente*/
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .icono {
+    flex-basis: calc(33.3%-1rem);
+  }
+}
+
+.icono h3 {
+  text-transform: uppercase;
+}
+
+/*Anuncios y Casas y Depas en Venta con Flexbox*/
+
+.contenedor-anuncios {
+  display: flex;
+  /*pones las imagenes horizontales*/
+  justify-content: space-between;
+  /* separa las las imagenes*/
+  flex-wrap: wrap;
+  /*la pagian anuncios.html baja las tres casas hacia abajo*/
+}
+
+.anuncio {
+  /*flex-basis: calc(33.3% - 1rem);
+    border-style: solid;
+    border-color: #b5b5b5;
+    border-width: 1px;*/
+  /* flex: 0 0 calc(33.3% - 1rem); /*remplaza los 3 de abajo*/
+  flex-grow: 1;
+  /* para que el contenido cresca si es posible*/
+  flex-shrink: 0;
+  /*proporciona y disminuye  las imagenes de la pagina anuncios.html*/
+  flex-basis: calc(33.3% - 1rem);
+  border: 1px solid #b5b5bb;
+  /*cumple la misma funcion que las anteriores lienas por separado*/
+  background-color: #f5f5f5;
+  /*color del fondo  de los flex gris*/
+  margin-bottom: 2rem;
+  /*separa las dos filas de 3 propiedades cada una*/
+}
+
+.contenido-anuncio {
+  /*padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;" se simplifica con uno solo ... se  usa para dar espacios a un solo lado */
+  /*padding:2rem; aplica a todas la direciones 2 rem*/
+  padding: 2rem 4rem 2rem 4rem;
+  /*arriba derecha abajo izquierda*/
+}
+
+.contenido-anuncio h3,
+.contenido-anuncio p {
+  margin: 0;
+  /*margens en cero del flex*/
+}
+
+.precio {
+  color: #71b100;
+  font-weight: 700;
+}
+
+/*Caracteristicas de Iconos*/
+
+.iconos-caracteristicas {
+  list-style: none;
+  /*son vinetas*/
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  /*centrado de iconos y texos*/
+  max-width: 500px;
+  /*reduce inconos en la pagiba anuncio.html*/
+  flex: 1;
+  /*separa los icono de la pagina anuncio.html/*
+  }
+  .iconos-caracteristicas li {
+    /*flex: 1;*/
+  display: flex;
+  /*coloca nuemros al lado del icono*/
+}
+
+.iconos-caracteristicas li img {
+  margin-right: 2rem;
+}
+
+/* p  font-wight:400 por default- h1 font-weight:700 default*/
+
+.ver-todas {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/** seccion encuentra la casa de tus Suenos Contacto*/
+
+.imagen-contacto {
+  /*background-image: url(../img/encuentra.jpg);*/
+  background-position: center center;
+  background-size: cover;
+  /*proporciona la imagen */
+  height: 40rem;
+  display: flex;
+  align-items: center;
+}
+
+.contenido-contacto {
+  flex: 0 0 95%;
+  /* el flex no toma todo el espacio*/
+  /*factor de crecimiento- auto proporcion el texto en el espacio */
+  color: #ffffff;
+}
+
+.contenido-contacto {
+  font-size: 1.8rem;
+}
+
+/******************Seccion inferior****************/
+
+@media (min-width: 768px) {
+  .seccion-inferior {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .seccion-inferior .blog {
+    flex-basis: 60%;
+  }
+  .seccion-inferior .testimoniales {
+    flex-basis: calc(40% - 2rem);
+  }
+}
+
+/* pones las imagenes mas grandes al mermar la resolucion o tamano*/
+
+.entrada-blog {
+  margin-bottom: 2rem;
+  /*separo las dos imagens verticalmenet*/
+}
+
+@media (min-width: 768px) {
+  .entrada-blog {
+    display: flex;
+    justify-content: space-between;
+    /*separo las dos imagens verticalmenet*/
+  }
+}
+
+.entrada-blog:last-of-type {
+  /*quita franaj de inspeccion al ultimo elemento*/
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .entrada-blog .imagen {
+    flex-basis: 40%;
+  }
+  .entrada-blog .texto-entrada {
+    flex-basis: calc(60% - 3rem);
+  }
+}
+
+.texto-entrada a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.texto-entrada h4 {
+  margin: 0;
+  line-height: 2.5rem;
+}
+
+.texto-entrada h4::after {
+  /*crea un seudoelemeto despues del H4 no sepueden seleccionar*/
+  /*content: "hola"; exixte de manera virtual*/
+  /*linea debajo de los textos Terrasa y Guia*/
+  content: "";
+  display: block;
+  width: 15rem;
+  height: 0.5rem;
+  background-color: #71b100;
+  margin-top: 1rem;
+}
+
+.texto-entrada span {
+  color: #fff000;
+}
+
+/* Testimoniales */
+
+.testimonial {
+  background-color: #71b100;
+  font-size: 2.4rem;
+  padding: 2rem;
+  color: #ffffff;
+  border-radius: 2rem;
+  /*crea bordes curvos.*/
+  /*border-top-right-radius:2rem;
+    border-bottom-left-radius: 20rem;*/
+}
+
+.testimonial {
+  text-align: right;
+}
+
+.testimonial blockquote::before {
+  content: "";
+  /*background-image: url(../img/comilla.svg);*/
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  /* posisciona una imagen en cualquier sitio -tiene qie trabajar con la linea de abajo*/
+  left: -2rem;
+}
+
+.testimonial blockquote {
+  position: relative;
+  padding-left: 5rem;
+  font-weight: 300;
+}
+
+/****Footer******/
+
+.site-footer {
+  background-color: #333333;
+  margin: 0;
+}
+
+.contenedor-footer {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .contenedor-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.site-footer nav {
+  display: none;
+  /*oculta la navegacion cundo esta en  tamano pequeno*/
+}
+
+@media (min-width: 768px) {
+  .site-footer nav {
+    display: block;
+    /*restablece la navegacion*/
+  }
+}
+
+.copyright {
+  margin: 0;
+  color: #ffffff;
+}
+
+/************CONTENIDO PAGINAS INTERNAS *******/
+
+/*Contenido Nosotros*/
+
+@media (min-width: 768px) {
+  .contenido-nosotros {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 2rem;
+    /*separa las dos columnas*/
+  }
+}
+
+.texto-nosotros blockquote {
+  font-weight: 900;
+  font-size: 2rem;
+  margin: 0;
+  padding: 1rem 0 3rem 0;
+}
+
+/*pagina anuncio.html*/
+
+.resumen-propiedad {
+  display: flex;
+  /*alinia textos y imagenes*/
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*Pagina Contactos.html Formularo */
+
+.contacto {
+  font: size 1.2rem;
+  color: #4f4f4f4f;
+  margin: 2rem 0 0 0;
+  /*agrupa los estylos del contacto
+  }
+  
+  legend {
+    font-size: 2.4rem;
+    color: #333333;
+    font-weight: 700;
+  }
+  label {
+    display: block; /*toman todo el espacio disponible*/
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+input:not([type="submit"]),
+  textarea,
+  select
+  /*selecciona todos los inpiut menos "submit"*/ {
+  padding: 1rem;
+  display: block;
+  width: 90%;
+  background-color: #e1e1e1;
+  margin-bottom: 2rem;
+  border: none;
+  border-radius: 1rem;
+}
+
+/*selector de aributo nuevo para centra el radio de email*/
+
+input[type="radio"] {
+  width: auto;
+}
+
+select {
+  -webkit-appearance: none;
+  /*trabaja sobre el select de la anterior clase*/
+  appearance: none;
+}
+
+textarea {
+  height: 20rem;
+}
+
+/*trabajo en el legend contacto*/
+
+.forma-contacto {
+  max-width: 30rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
